@@ -1,5 +1,5 @@
-Smart Student Performance Prediction System
-1. PROBLEM STATEMENT:
+# Smart Student Performance Prediction System
+## 1. PROBLEM STATEMENT:
 Student performance is influenced by multiple academic and behavioral factors.
 Faculty may find it difficult to identify students who are at risk at an early stage.
 A data-driven system can help predict student performance.
