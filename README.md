@@ -102,16 +102,16 @@ The initial system can use:
 - Previous Academic Performance
 ## 6.6 IDENTIFY SYSTEM OUTPUTS:
 ### 6.6.1 PERFORMANCE PREDICTION:
-Excellent
-Good
-Average
-At Risk
-6.6.2 ADDITIONAL OUTPUT:
-Prediction score/probability
-Risk level
-Key factors affecting performance
-Recommended actions
-Example:
+- Excellent
+- Good
+- Average
+- At Risk
+### 6.6.2 ADDITIONAL OUTPUT:
+- Prediction score/probability
+- Risk level
+- Key factors affecting performance
+- Recommended actions
+# Example:
 Prediction: Good Performance
 
 Risk Level: Low
