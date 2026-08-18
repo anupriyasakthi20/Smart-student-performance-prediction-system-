@@ -138,4 +138,4 @@ Recommendation: Maintain current study pattern and attendance
 - Predicted performance
 - Performance category
 - Risk level
--Recommendation
+- Recommendation
