@@ -140,7 +140,7 @@ Recommendation: Maintain current study pattern and attendance
 - Risk level
 - Recommendation
 
-  ## 8.Proposed System Architecture
+# 8.Proposed System Architecture
 
 ```mermaid
 flowchart LR
@@ -148,3 +148,34 @@ flowchart LR
     B --> C([Data Processing<br/>Prepare Data for ML Model])
     C --> D([ML Prediction Engine<br/>Predict Performance])
     D --> E([Result + AI<br/>Recommendation])
+```
+# 9.UI Design Requirements
+The application should contain:
+## 1.Student Information Section
+- Student ID
+- Student Name
+## 2.Academic Information Section
+- Attendance
+- Study Hours
+- Internal Marks
+- Assignment Completion
+- Previous Performance
+## 3.Action Section
+- Predict Performance
+- Clear
+- Exit
+## 4.Result Section
+- Predicted Performance
+- Risk Level
+- Recommendation
+
+# 10.Workflow
+```
+User clicks Predict
+        ↓
+Button generates event
+        ↓
+Callback function executes
+        ↓
+Python processing starts
+```
