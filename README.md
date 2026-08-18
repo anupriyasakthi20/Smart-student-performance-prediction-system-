@@ -117,3 +117,25 @@ Prediction: Good Performance
 Risk Level: Low
 
 Recommendation: Maintain current study pattern and attendance
+
+# 7. From Requirements to System Design
+
+## 7.1.Inputs
+- Student ID
+- Student Name
+- Attendance %
+- Study Hours
+- Internal Marks
+- Assignment Completion %
+- Previous Academic Performance
+## 7.2.Processing
+- Validate input
+- Preprocess data
+- Send data to ML model
+- Generate prediction
+- Generate recommendation
+## 7.3.Outputs
+- Predicted performance
+- Performance category
+- Risk level
+-Recommendation
