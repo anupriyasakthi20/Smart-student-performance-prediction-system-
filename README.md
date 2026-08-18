@@ -139,3 +139,12 @@ Recommendation: Maintain current study pattern and attendance
 - Performance category
 - Risk level
 - Recommendation
+
+  ## 8.Proposed System Architecture
+
+```mermaid
+flowchart LR
+    A([Tkinter UI<br/>Student Data Entry]) --> B([Input Validation<br/>Check Valid User Inputs])
+    B --> C([Data Processing<br/>Prepare Data for ML Model])
+    C --> D([ML Prediction Engine<br/>Predict Performance])
+    D --> E([Result + AI<br/>Recommendation])
