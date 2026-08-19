@@ -179,3 +179,12 @@ Callback function executes
         ↓
 Python processing starts
 ```
+# 11. Using Frames
+
+## The main window:
+
+- Header frames
+- student information
+- Academic information
+- Header frame
+- Results frame
