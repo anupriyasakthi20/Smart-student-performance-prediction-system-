@@ -223,7 +223,7 @@ Python processing starts
 | Rules are written manually | Model learns rules from data |
 | Output = Logic + Input | Output = Model + Input |
 | Fixed logic | Adaptive learning |
-# 15.ML Workflow ## ML WORKFLOW
+# 15.ML Workflow
 ```
     Data Collection
          ↓
