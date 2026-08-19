@@ -188,3 +188,39 @@ Python processing starts
 - Academic information
 - Header frame
 - Results frame
+# 12.Requirements Design 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 13.OUTCOMES
+
+## Should complete:
+- Dataset (CSV file)
+- Data preprocessing code
+- Trained ML model
+- Accuracy report
+- Prediction function
+- Saved model file (.pkl)
+# 14.Traditional Programming vs Machine Learning
+
+| Traditional Programming | Machine Learning |
+|:------------------------:|:----------------:|
+| Rules are written manually | Model learns rules from data |
+| Output = Logic + Input | Output = Model + Input |
+| Fixed logic | Adaptive learning |
+
