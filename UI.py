@@ -1,113 +1,6 @@
+
 import tkinter as tk
 from tkinter import ttk, messagebox
-def validate_student_id(event=None):
-    value = student_id_entry.get().strip()
-
-    if value == "":
-        student_id_error.config(text="")
-    elif not value.isdigit():
-        student_id_error.config(
-            text="Numbers only"
-        )
-    else:
-        student_id_error.config(text="")
-def validate_student_name(event=None):
-    value = student_name_entry.get().strip()
-    if value == "":
-        student_name_error.config(text="")
-    elif not all(character.isalpha() or character.isspace()
-        for character in value
-    ):
-        student_name_error.config(
-            text="Letters only"
-        )
-    else:
-        student_name_error.config(text="")
-def validate_attendance(event=None):
-    value = attendance_entry.get().strip()
-    if value == "":
-        attendance_error.config(text="")
-        return
-    try:
-        number = float(value)
-        if number < 0 or number > 100:
-            attendance_error.config(
-                text="Must be 0 - 100"
-            )
-        else:
-            attendance_error.config(text="")
-    except ValueError:
-        attendance_error.config(
-            text="Numbers only"
-        )
-def validate_study_hours(event=None):
-    value = study_hours_entry.get().strip()
-    if value == "":
-        study_hours_error.config(text="")
-        return
-    try:
-        number = float(value)
-        if number < 0 or number > 24:
-            study_hours_error.config(
-                text="Must be 0 - 24"
-            )
-        else:
-            study_hours_error.config(text="")
-    except ValueError:
-        study_hours_error.config(
-            text="Numbers only"
-        )
-def validate_internal_marks(event=None):
-    value = internal_marks_entry.get().strip()
-    if value == "":
-        internal_error.config(text="")
-        return
-    try:
-        number = float(value)
-        if number < 0 or number > 100:
-            internal_error.config(
-                text="Must be 0 - 100"
-            )
-        else:
-            internal_error.config(text="")
-    except ValueError:
-        internal_error.config(
-            text="Numbers only"
-        )
-def validate_assignment(event=None):
-    value = assignment_entry.get().strip()
-    if value == "":
-        assignment_error.config(text="")
-        return
-    try:
-        number = float(value)
-        if number < 0 or number > 100:
-            assignment_error.config(
-                text="Must be 0 - 100"
-            )
-        else:
-            assignment_error.config(text="")
-    except ValueError:
-        assignment_error.config(
-            text="Numbers only"
-        )
-def validate_previous_score(event=None):
-    value = previous_score_entry.get().strip()
-    if value == "":
-        previous_score_error.config(text="")
-        return
-    try:
-        number = float(value)
-        if number < 0 or number > 100:
-            previous_score_error.config(
-                text="Must be 0 - 100"
-            )
-        else:
-            previous_score_error.config(text="")
-    except ValueError:
-        previous_score_error.config(
-            text="Numbers only"
-        )
 def predict_performance():
     try:
         student_id = student_id_entry.get().strip()
@@ -117,13 +10,6 @@ def predict_performance():
             return
         if not student_id.isdigit():
             messagebox.showerror("Invalid Student ID","Student ID must contain numbers only.")
-            student_id_entry.focus()
-            return
-        if not all(
-            character.isalpha() or character.isspace()
-            for character in student_name):
-            messagebox.showerror("Invalid Student Name","Student Name must contain letters only.")
-            student_name_entry.focus()
             return
         attendance = float(attendance_entry.get())
         study_hours = float(study_hours_entry.get())
@@ -140,19 +26,20 @@ def predict_performance():
             raise ValueError("Assignment marks must be between 0 and 100.")
         if not 0 <= previous_score <= 100:
             raise ValueError("Previous score must be between 0 and 100.")
-        predicted_score = (attendance * 0.20 + min(study_hours * 10, 100) * 0.15 + internal_marks * 0.25 + assignment_marks * 0.15 + previous_score * 0.25)
+        predicted_score = (
+            attendance * 0.20 + min(study_hours * 10, 100) * 0.15 + internal_marks * 0.25 + assignment_marks * 0.15 + previous_score * 0.25)
         predicted_score = round(predicted_score, 2)
         if predicted_score >= 75:
             risk_level = "Low Risk"
-            recommendation = ( "Excellent performance. Continue the same ""study routine and participate actively in class." )
+            recommendation = ("Excellent performance. Continue the same study routine ""and participate actively in class." )
             risk_color = "#1976D2"
         elif predicted_score >= 50:
             risk_level = "Medium Risk"
-            recommendation = ("Performance is satisfactory. Increase study ""hours and revise difficult topics regularly." )
+            recommendation = ("Performance is satisfactory. Increase study hours and " "revise difficult topics regularly.")
             risk_color = "#D89D44"
         else:
             risk_level = "High Risk"
-            recommendation = ("Needs improvement. Attend classes regularly, ""complete assignments, and seek help from teachers.")
+            recommendation = ("Needs improvement. Attend classes regularly, complete ""assignments, and seek help from teachers." )
             risk_color = "#D32F2F"
         prediction_result.config(
             text=f"Predicted Score: {predicted_score}%",
@@ -166,7 +53,10 @@ def predict_performance():
             text=recommendation
         )
     except ValueError as error:
-        messagebox.showerror("Invalid Input",str(error))
+        messagebox.showerror(
+            "Invalid Input",
+            str(error)
+        )
 def clear_fields():
     entries = [
         student_id_entry,
@@ -179,13 +69,6 @@ def clear_fields():
     ]
     for entry in entries:
         entry.delete(0, tk.END)
-    student_id_error.config(text="")
-    student_name_error.config(text="")
-    attendance_error.config(text="")
-    study_hours_error.config(text="")
-    internal_error.config(text="")
-    assignment_error.config(text="")
-    previous_score_error.config(text="")
     prediction_result.config(text="")
     risk_result.config(text="")
     recommendation_result.config(text="")
@@ -196,9 +79,7 @@ root = tk.Tk()
 root.title("Smart Student Performance Prediction System")
 root.geometry("950x700")
 root.resizable(False, False)
-root.configure(
-    bg="#F2F6FB"
-)
+root.configure(bg="#F2F6FB")
 style = ttk.Style()
 style.theme_use("clam")
 style.configure(
@@ -255,9 +136,7 @@ title_label = ttk.Label(
     style="Title.TLabel",
     anchor="center"
 )
-title_label.pack(
-    pady=20
-)
+title_label.pack(pady=20)
 main_frame = tk.Frame(
     root,
     bg="#F2F6FB"
@@ -266,29 +145,23 @@ main_frame.pack(
     padx=40,
     fill="x"
 )
-main_frame.grid_columnconfigure(
-    0,
-    weight=1
-)
-main_frame.grid_columnconfigure(
-    1,
-    weight=1
-)
+main_frame.grid_columnconfigure(0, weight=1)
+main_frame.grid_columnconfigure(1, weight=1)
 student_frame = tk.LabelFrame(
     main_frame,
     text="Student Information",
     bg="white",
-    fg="#C67CE4",
+    fg="#C67CE4", 
     font=("Arial", 12, "bold"),
     padx=15,
     pady=15,
-    width=500,
-    height=300
+    width=400,
+    height=200
 )
 student_frame.grid(
     row=0,
     column=0,
-    padx=(0, 15),
+    padx=(0,15),
     pady=6,
     sticky="nsew"
 )
@@ -302,7 +175,7 @@ tk.Label(
     row=0,
     column=0,
     padx=8,
-    pady=(8, 0),
+    pady=10,
     sticky="w"
 )
 student_id_entry = ttk.Entry(
@@ -313,20 +186,7 @@ student_id_entry.grid(
     row=0,
     column=1,
     padx=8,
-    pady=(8, 0)
-)
-student_id_error = tk.Label(
-    student_frame,
-    text="",
-    bg="white",
-    fg="#D32F2F",
-    font=("Arial", 8)
-)
-student_id_error.grid(
-    row=0,
-    column=2,
-    padx=(0, 5),
-    sticky="w"
+    pady=10
 )
 tk.Label(
     student_frame,
@@ -350,19 +210,6 @@ student_name_entry.grid(
     padx=8,
     pady=10
 )
-student_name_error = tk.Label(
-    student_frame,
-    text="",
-    bg="white",
-    fg="#D32F2F",
-    font=("Arial", 8)
-)
-student_name_error.grid(
-    row=1,
-    column=2,
-    padx=(0, 5),
-    sticky="w"
-)
 academic_frame = tk.LabelFrame(
     main_frame,
     text="Academic Information",
@@ -371,13 +218,13 @@ academic_frame = tk.LabelFrame(
     font=("Arial", 12, "bold"),
     padx=20,
     pady=20,
-    width=500,
-    height=300
+    width=400,
+    height=250
 )
 academic_frame.grid(
     row=0,
     column=1,
-    padx=(15, 0),
+    padx=(15,0),
     pady=5,
     sticky="nsew"
 )
@@ -404,19 +251,6 @@ attendance_entry.grid(
     padx=8,
     pady=7
 )
-attendance_error = tk.Label(
-    academic_frame,
-    text="",
-    bg="white",
-    fg="#D32F2F",
-    font=("Arial", 8)
-)
-attendance_error.grid(
-    row=0,
-    column=2,
-    padx=2,
-    sticky="w"
-)
 tk.Label(
     academic_frame,
     text="Study Hours per Day",
@@ -438,19 +272,6 @@ study_hours_entry.grid(
     column=1,
     padx=8,
     pady=7
-)
-study_hours_error = tk.Label(
-    academic_frame,
-    text="",
-    bg="white",
-    fg="#D32F2F",
-    font=("Arial", 8)
-)
-study_hours_error.grid(
-    row=1,
-    column=2,
-    padx=2,
-    sticky="w"
 )
 tk.Label(
     academic_frame,
@@ -474,19 +295,6 @@ internal_marks_entry.grid(
     padx=8,
     pady=7
 )
-internal_error = tk.Label(
-    academic_frame,
-    text="",
-    bg="white",
-    fg="#D32F2F",
-    font=("Arial", 8)
-)
-internal_error.grid(
-    row=2,
-    column=2,
-    padx=2,
-    sticky="w"
-)
 tk.Label(
     academic_frame,
     text="Assignment (%)",
@@ -508,19 +316,6 @@ assignment_entry.grid(
     column=1,
     padx=8,
     pady=7
-)
-assignment_error = tk.Label(
-    academic_frame,
-    text="",
-    bg="white",
-    fg="#D32F2F",
-    font=("Arial", 8)
-)
-assignment_error.grid(
-    row=3,
-    column=2,
-    padx=2,
-    sticky="w"
 )
 tk.Label(
     academic_frame,
@@ -544,26 +339,6 @@ previous_score_entry.grid(
     padx=8,
     pady=7
 )
-previous_score_error = tk.Label(
-    academic_frame,
-    text="",
-    bg="white",
-    fg="#D32F2F",
-    font=("Arial", 8)
-)
-previous_score_error.grid(
-    row=4,
-    column=2,
-    padx=2,
-    sticky="w"
-)
-student_id_entry.bind("<KeyRelease>",validate_student_id)
-student_name_entry.bind("<KeyRelease>",validate_student_name)
-attendance_entry.bind("<KeyRelease>",validate_attendance)
-study_hours_entry.bind("<KeyRelease>",validate_study_hours)
-internal_marks_entry.bind("<KeyRelease>",validate_internal_marks)
-assignment_entry.bind("<KeyRelease>",validate_assignment)
-previous_score_entry.bind("<KeyRelease>",validate_previous_score)
 button_frame = tk.Frame(
     root,
     bg="#F2F6FB"
