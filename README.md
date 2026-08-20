@@ -191,7 +191,8 @@ Python processing starts
 # 12.Requirements Design 
 
 
-![Project Image](image.png)<img width="1400" height="1082" alt="image png" src="https://github.com/user-attachments/assets/a9185c64-03d9-4c7f-bbae-8b97df733350" />
+![Project image](image.jpg)<img width="1358" height="1100" alt="image jpg" src="https://github.com/user-attachments/assets/f6344b3d-fa73-4e85-96f3-61b227fa580a" />
+
 
 
 
