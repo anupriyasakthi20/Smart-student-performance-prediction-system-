@@ -268,3 +268,6 @@ Python processing starts
 - At Risk
 ## Regression Problem
 - Output = Performance Score (0-100)
+# 18.Model Selection
+## Algorithms Introduced
+- Logistic Regression
