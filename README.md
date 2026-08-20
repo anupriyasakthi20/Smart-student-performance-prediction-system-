@@ -258,3 +258,13 @@ Python processing starts
 - Test model with new input
 ## Activity 7 - Save Model
 - Save model using pickle
+# 17. Problem Type
+## For this Project:
+- Classification Problem
+## Output categories:
+- Excellent
+- Good
+- Average
+- At Risk
+## Regression Problem
+- Output = Performance Score (0-100)
