@@ -237,5 +237,24 @@ Python processing starts
          ↓
      Prediction
 ```
+# 16.ML WORKFLOW
 
-
+## Activity 1-Dataset Creation
+- Create student dataset in CSV
+- Add 20-50 records
+## Activity 2 - Data Loading
+- Load dataset using Pandas
+- Display dataset
+## Activity 3-Data Cleaning
+- Remove missing values
+- Check data types
+## Activity 4 - Model Training
+- Train Logistic Regression model
+- Split dataset
+## Activity 5 - Model Evaluation
+- Calculate accuracy
+- Analyze results
+## Activity 6 - Prediction
+- Test model with new input
+## Activity 7 - Save Model
+- Save model using pickle
