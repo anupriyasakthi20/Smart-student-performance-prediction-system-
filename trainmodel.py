@@ -3,40 +3,22 @@ from tkinter import ttk, messagebox
 import os
 import pickle
 import pandas as pd
-
-
-# ============================================================
-# FILE LOCATION
-# ============================================================
-
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 MODEL_FILE = os.path.join(
     BASE_DIR,
     "student_performance_model.pkl"
 )
-
-
-# ============================================================
-# LOAD TRAINED ML MODEL
-# ============================================================
-
 if not os.path.exists(MODEL_FILE):
-
     temp_root = tk.Tk()
     temp_root.withdraw()
-
     messagebox.showerror(
         "Model Not Found",
         "student_performance_model.pkl was not found.\n\n"
         "Please keep the .pkl model in the same folder "
         "as this Python file."
     )
-
     temp_root.destroy()
     raise SystemExit
-
-
 try:
 
     with open(MODEL_FILE, "rb") as file:
